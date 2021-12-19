@@ -6,6 +6,7 @@ function BlogPage() {
   const navigate=useNavigate();
   const [postsArr, setPostsArr] = useState([]);
   const [currentUser, setCurrentUser] = useState([]);
+  const [test, setTest] = useState("");
   useEffect(() => {
     let {posts}=localStorage;
     let {currentUser}=localStorage;
@@ -28,7 +29,7 @@ function BlogPage() {
     <div>
         <button onClick={logoutFunc}>logout</button>
       {
-        postsArr.map((data,index)=><Post key={index} index={index} blogData={data} role={currentUser.role}/>)
+        postsArr.map((data,index)=><Post key={index} index={index} blogData={data} role={currentUser.role} testSolveRefresh={setTest}/>)
       }
     </div>
   );

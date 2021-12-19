@@ -34,12 +34,14 @@ function Post(props) {
       setPostsArr(postsArr);
       localStorage.setItem("posts", JSON.stringify(postsArr));
     }
+    props.testSolveRefresh("test"+Math.random());
   };
   const addCommetFunc = (e) => {
     e.preventDefault();
     postsArr[props.index].comments.push(newComment);
     setPostsArr(postsArr);
     localStorage.setItem("posts", JSON.stringify(postsArr));
+    // props.testSolveRefresh("test"+Math.random());
   };
 
   return (
